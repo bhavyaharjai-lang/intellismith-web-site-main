@@ -302,8 +302,8 @@
   .leaders-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; }
   .leader-card { background: #ffffff; border: 1px solid var(--border); border-radius: 14px; padding: 36px 28px; text-align: center; transition: all 0.25s; }
   .leader-card:hover { border-color: rgba(21,101,192,0.2); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(21,101,192,0.1); }
-  .leader-avatar { width: 90px; height: 98px; border-radius: 50%; background: linear-gradient(135deg, var(--white), var(--accent)); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: white; margin: 0 auto 18px; overflow: hidden; }
-  .leader-avatar img { width: 90%; height: 98%; object-fit: cover; }
+  .leader-avatar { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--accent)); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: white; margin: 0 auto 18px; overflow: hidden; }
+  .leader-avatar img { width: 100%; height: 100%; object-fit: cover; }
   .leader-name { font-size: 15.5px; font-weight: 600; margin-bottom: 5px; }
   .leader-role { font-size: 11.5px; color: var(--accent); letter-spacing: 0.5px; margin-bottom: 14px; text-transform: uppercase; }
   .leader-bio { font-size: 13px; color: var(--muted); line-height: 1.7; }
@@ -593,16 +593,17 @@
 
 <style>
   .leader-avatar {
-    width: 76px;
+    width: 100px;
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
+    background: linear-gradient(135deg, var(--white), #fff);
   }
 
   .leader-avatar img {
-    width: 100%;
-    height: 100%;
+    width: 86%;
+    height: 99%;
     object-fit: cover;
     object-position: center;
   }
