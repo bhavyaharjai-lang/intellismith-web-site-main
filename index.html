@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intellismith — Technology Consulting & Talent Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+    /* FLOATING CONTACT BUTTONS */
+.floating-btns {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 10000;
+}
+
+.f-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.f-btn:hover {
+  transform: translateY(-4px) scale(1.08);
+}
+
+.whatsapp {
+  background: #25D366;
+}
+
+.linkedin {
+  background: #0077B5;
+}
+  :root {
+    --deep: #ffffff;
+    --navy: #f8f9fb;
+    --accent: #1565c0;
+    --sky: #1565c0;
+    --purple: #8e24aa;
+    --green: #7cb342;
+    --paper: #1a1a24;
+    --muted: #5a6b7d;
+    --border: rgba(0,0,0,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    background: var(--deep);
+    color: var(--paper);
+    overflow-x: hidden;
+    font-weight: 300;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.005'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9998;
+  }
+
+  /* NAV */
+
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 64px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo img { object-fit: contain; }
+
+  .logo-mark {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--purple), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; font-weight: 700; font-size: 15px; color: white;
+  }
+
+  .logo-text { display: none; }
+  
+
+  .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 13.5px; padding: 8px 14px; border-radius: 6px; transition: all 0.2s; }
+  .nav-links a:hover { color: var(--paper); background: rgba(255,255,255,0.05); }
+  .nav-cta { background: var(--accent) !important; color: white !important; font-weight: 500 !important; }
+  .nav-cta:hover { background: #1d4fd8 !important; }
+
+
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 120px 64px 80px;
+    text-align: center;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% -5%, rgba(37,99,235,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 50% at 80% 80%, rgba(21,101,192,0.03) 0%, transparent 60%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(37,99,235,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37,99,235,0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent);
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 820px; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(21,101,192,0.08); border: 1px solid rgba(21,101,192,0.25);
+    padding: 7px 18px; border-radius: 100px;
+    font-size: 12.5px; color: #1565c0; letter-spacing: 0.5px;
+    margin-bottom: 28px; animation: fadeUp 0.7s ease both;
+  }
+
+  .badge-dot { width: 6px; height: 6px; background: var(--purple); border-radius: 50%; animation: pdot 2s ease-in-out infinite; }
+
+  .hero-h1 {
+    font-size: clamp(44px, 5.5vw, 70px);
+    font-weight: 700; line-height: 1.08; letter-spacing: -1.5px;
+    margin-bottom: 24px; animation: fadeUp 0.7s 0.08s ease both;
+  }
+
+  .hero-h1 .highlight {
+    font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400;
+    background: linear-gradient(90deg, var(--purple), var(--accent));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub { font-size: 17px; line-height: 1.75; color: var(--muted); max-width: 600px; margin: 0 auto 40px; animation: fadeUp 0.7s 0.16s ease both; }
+
+  .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.7s 0.24s ease both; }
+
+  .btn-primary {
+    background: var(--accent); color: white; padding: 14px 32px;
+    border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500;
+    border: 1px solid transparent; box-shadow: 0 4px 16px rgba(21,101,192,0.15);
+    transition: all 0.25s;
+  }
+  .btn-primary:hover { background: #1d4fd8; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(21,101,192,0.25); }
+
+  .btn-outline {
+    background: transparent; color: var(--paper); padding: 14px 32px;
+    border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500;
+    border: 1px solid var(--border); transition: all 0.25s;
+  }
+  .btn-outline:hover { border-color: rgba(21,101,192,0.3); background: rgba(21,101,192,0.05); }
+
+  .hero-stats {
+    display: flex; justify-content: center; gap: 64px;
+    margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--border);
+    animation: fadeUp 0.7s 0.32s ease both;
+  }
+
+  .stat-val {
+    font-size: 36px; font-weight: 700; letter-spacing: -1px;
+    background: linear-gradient(90deg, var(--paper), var(--accent));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block;
+  }
+  .stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.5px; margin-top: 4px; }
+
+  /* SECTIONS */
+  .section { padding: 100px 64px; }
+  .section-center { text-align: center; }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11.5px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 16px; font-weight: 500;
+  }
+  .eyebrow::before, .eyebrow::after { content: ''; width: 24px; height: 1px; background: var(--accent); opacity: 0.5; }
+
+  .section-title { font-size: clamp(34px, 3.5vw, 52px); font-weight: 700; letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px; }
+  .section-title em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; color: var(--accent); }
+  .section-sub { font-size: 15.5px; color: var(--muted); line-height: 1.75; max-width: 560px; margin: 0 auto; }
+
+  /* PILLARS */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; }
+
+  .pillar {
+    background: #f8f9fb; border: 1px solid var(--border);
+    border-radius: 16px; padding: 40px 36px;
+    position: relative; overflow: hidden; transition: all 0.3s;
+  }
+  .pillar:hover { border-color: rgba(21,101,192,0.25); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(21,101,192,0.1); }
+
+  .pillar-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 24px; }
+  .icon-blue { background: rgba(21,101,192,0.1); }
+  .icon-sky { background: rgba(21,101,192,0.12); }
+  .icon-gold { background: rgba(124,179,66,0.12); }
+
+  .pillar-title { font-size: 19px; font-weight: 600; margin-bottom: 14px; letter-spacing: -0.3px; }
+  .pillar-desc { font-size: 14px; line-height: 1.75; color: var(--muted); margin-bottom: 24px; }
+  .pillar-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ptag { font-size: 11px; padding: 4px 10px; border: 1px solid var(--border); border-radius: 100px; color: var(--muted); }
+
+  /* TECH GRID */
+  .bg-alt { background: #f8f9fb; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 64px; }
+
+  .tech-card {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 12px; padding: 32px;
+    transition: all 0.3s;
+  }
+  .tech-card:hover { border-color: rgba(21,101,192,0.2); box-shadow: 0 8px 24px rgba(21,101,192,0.08); }
+
+  .tech-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+  .tech-icon { font-size: 26px; width: 48px; height: 48px; border-radius: 10px; background: rgba(21,101,192,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .tech-card-title { font-size: 15.5px; font-weight: 600; letter-spacing: -0.2px; }
+  .tech-card-desc { font-size: 13.5px; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+
+  .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .bullet-list li { font-size: 12.5px; color: var(--muted); padding-left: 16px; position: relative; }
+  .bullet-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; }
+
+  /* TALENT */
+  .talent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 64px; }
+
+  .process-steps { display: flex; flex-direction: column; gap: 16px; }
+  .proc-step { display: flex; gap: 16px; padding: 18px 20px; border: 1px solid var(--border); border-radius: 10px; background: #f8f9fb; transition: all 0.25s; }
+  .proc-step:hover { border-color: rgba(21,101,192,0.25); background: rgba(21,101,192,0.04); }
+  .proc-num { min-width: 30px; height: 30px; background: rgba(21,101,192,0.12); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 11.5px; font-weight: 600; color: var(--accent); flex-shrink: 0; }
+  .proc-content h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .proc-content p { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+  .talent-right h3 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 20px; line-height: 1.25; }
+  .talent-right p { font-size: 14.5px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+
+  .highlight-box { background: linear-gradient(135deg, rgba(21,101,192,0.07), rgba(21,101,192,0.03)); border: 1px solid rgba(21,101,192,0.15); border-radius: 12px; padding: 24px; margin-top: 24px; }
+  .highlight-box p { font-size: 14px; font-style: italic; color: #1565c0; margin: 0; line-height: 1.65; }
+
+  .chip-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .chip { font-size: 12px; padding: 6px 14px; border: 1px solid var(--border); border-radius: 100px; color: var(--muted); }
+  .chip.a { border-color: rgba(21,101,192,0.25); color: var(--accent); background: rgba(21,101,192,0.06); }
+
+  /* L&D */
+  .ld-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 64px; }
+
+  .ld-card { border-radius: 14px; padding: 36px; }
+  .ld-main { background: linear-gradient(135deg, rgba(21,101,192,0.08), rgba(21,101,192,0.03)); border: 1px solid rgba(21,101,192,0.2); grid-row: 1/3; }
+  .ld-sm { background: #ffffff; border: 1px solid var(--border); transition: border-color 0.25s; }
+  .ld-sm:hover { border-color: rgba(142,36,170,0.2); }
+  .ld-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .ld-title { font-size: 21px; font-weight: 700; letter-spacing: -0.4px; margin-bottom: 14px; }
+  .ld-sm .ld-title { font-size: 17px; }
+  .ld-desc { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 22px; }
+
+  .ld-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .ld-feat { display: flex; gap: 10px; font-size: 13px; color: var(--muted); }
+  .ld-feat-icon { font-size: 16px; flex-shrink: 0; }
+
+  /* STORY */
+  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .story-left h2 { font-size: clamp(30px, 3vw, 46px); font-weight: 700; letter-spacing: -1px; line-height: 1.15; margin-bottom: 20px; }
+  .story-left p { font-size: 14.5px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+
+  .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .metric-box { background: #f8f9fb; border: 1px solid var(--border); border-radius: 12px; padding: 28px 22px; text-align: center; }
+  .metric-box.accent { background: linear-gradient(135deg, rgba(21,101,192,0.08), rgba(21,101,192,0.03)); border-color: rgba(21,101,192,0.2); }
+  .metric-box.span2 { grid-column: 1/3; }
+  .metric-val { font-size: 34px; font-weight: 700; letter-spacing: -1px; background: linear-gradient(90deg, var(--accent), #1d4fd8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: block; }
+  .metric-label { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+
+
+  /* LEADERS */
+  .leaders-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 64px; }
+  .leader-card { background: #ffffff; border: 1px solid var(--border); border-radius: 14px; padding: 36px 28px; text-align: center; transition: all 0.25s; }
+  .leader-card:hover { border-color: rgba(21,101,192,0.2); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(21,101,192,0.1); }
+  .leader-avatar { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--purple), var(--accent)); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: white; margin: 0 auto 18px; overflow: hidden; }
+  .leader-avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .leader-name { font-size: 15.5px; font-weight: 600; margin-bottom: 5px; }
+  .leader-role { font-size: 11.5px; color: var(--accent); letter-spacing: 0.5px; margin-bottom: 14px; text-transform: uppercase; }
+  .leader-bio { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* ===== Enhanced CTA Card ===== */
+
+.cta-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 100px 20px;
+}
+
+
+.cta-box {
+  max-width: 1100px;
+  width: 100%;
+  background: linear-gradient(145deg, #f4f7fb, #e9eff6);
+  padding: 70px 60px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.cta-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.cta-header h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.cta-header em {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.cta-header p {
+  color: #6c7a89;
+  font-size: 17px;
+}
+
+/* Layout */
+.cta-content {
+  display: flex;
+  gap: 70px;
+  align-items: flex-start;
+}
+
+.cta-left,
+.cta-right {
+  flex: 1;
+}
+
+/* Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Address */
+.addr-item {
+  margin-bottom: 30px;
+}
+
+.addr-item h4 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.addr-item p {
+  color: #5e6b78;
+  line-height: 1.6;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #dcdfe5;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  outline: none;
+}
+
+.contact-form button {
+  padding: 16px;
+  border-radius: 40px;
+  border: none;
+  background: linear-gradient(90deg,#2563eb,#06b6d4);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .cta-box {
+    padding: 50px 30px;
+  }
+
+  .cta-content {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 60px 64px 36px; background: #f8f9fb; }
+  .footer-top { display: grid; grid-template-columns: 200px 1fr auto; gap: 72px; margin-bottom: 48px; }
+  .footer-brand p { font-size: 12.5px; color: var(--muted); line-height: 1.7; margin-top: 12px; }
+  .partner-badges { display: flex; gap: 10px; margin-top: 14px; }
+  .badge-partner { font-size: 10.5px; letter-spacing: 1px; padding: 4px 11px; border: 1px solid var(--border); border-radius: 100px; color: var(--muted); }
+  .footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .footer-col h4 { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--paper); margin-bottom: 16px; font-weight: 500; }
+  .footer-col a { display: block; font-size: 13px; color: var(--muted); text-decoration: none; margin-bottom: 9px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--paper); }
+  .footer-contact p { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 7px; }
+  .footer-contact a { color: var(--accent); text-decoration: none; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12px; color: rgba(90,107,125,0.48); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pdot { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
+
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.75s ease, transform 0.75s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .d1 { transition-delay: 0.1s; }
+  .d2 { transition-delay: 0.2s; }
+  .d3 { transition-delay: 0.3s; }
+  /* ===== CTA TWO COLUMN LAYOUT ===== */
+
+.cta-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.cta-content {
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cta-left {
+  flex: 1;
+}
+
+.cta-right {
+  flex: 1;
+}
+
+/* Contact Form Styling */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 12px;
+  border: 1.5px solid #e0e7ff;
+  font-size: 15px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #fafbff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #a0aec0;
+  font-weight: 300;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+  border-color: #c7d2fe;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #6366f1;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), 0 4px 16px rgba(99, 102, 241, 0.15);
+}
+
+.contact-form button {
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #06b6d4 100%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Sora', sans-serif;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-form button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.4);
+}
+
+.contact-form button:hover::before {
+  left: 100%;
+}
+
+.contact-form button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+}
+
+.contact-form button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2), 0 12px 32px rgba(99, 102, 241, 0.4);
+}
+
+/* Address Styling */
+
+.address-item {
+  margin-top: 25px;
+}
+
+.address-item h4 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .cta-content {
+    flex-direction: column;
+  }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  .leader-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .leader-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+</style>
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <img src="./logo.png" alt="Intellismith" style="height:44px;width:auto;display:block;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#tech">Technology</a></li>
+    <li><a href="#talent">Talent</a></li>
+    <li><a href="#ld">Learning & Dev</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li>
+      <button onclick="handleApplyClick()">Apply Jobs</button>
+      </li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Technology · Talent · Learning — Est. 2019
+    </div>
+    <h1 class="hero-h1">
+      Integrating Human<br>
+      <span class="highlight">Intelligence &amp; Technology</span>
+    </h1>
+    <p class="hero-sub">Delivering industry-focused talent solutions, transformative learning experiences, and enterprise-ready technology services — all with purpose and precision.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Explore Solutions</a>
+      <a href="#contact" class="btn-outline">Talk to Us →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <span class="stat-val">50+</span>
+        <div class="stat-label">Years Collective Leadership Experience</div>
+      </div>
+      <div>
+        <span class="stat-val">3</span>
+        <div class="stat-label">Core Service Pillars</div>
+      </div>
+      <div>
+        <span class="stat-val">BFSI</span>
+        <div class="stat-label">IT · Telecom · Finance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE PILLARS -->
+<section class="section section-center" id="services">
+  <div class="reveal">
+    <div class="eyebrow">What We Do</div>
+    <h2 class="section-title">Three Pillars of <em>Excellence</em></h2>
+    <p class="section-sub">From enterprise technology to precision talent acquisition and workforce learning — Intellismith is your end-to-end transformation partner.</p>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar reveal d1">
+      <div class="pillar-icon icon-blue">☁️</div>
+      <h3 class="pillar-title">Technology Solutions</h3>
+      <p class="pillar-desc">Enterprise-grade cloud, AI, and digital transformation powered by IBM and Microsoft partnerships — from migration to ongoing support and innovation.</p>
+      <div class="pillar-tags">
+        <span class="ptag">Cloud Migration</span>
+        <span class="ptag">AI & Analytics</span>
+        <span class="ptag">Cybersecurity</span>
+        <span class="ptag">ERP Solutions</span>
+      </div>
+    </div>
+    <div class="pillar reveal d2">
+      <div class="pillar-icon icon-sky">🤝</div>
+      <h3 class="pillar-title">Outsourcing & Talent Acquisition</h3>
+      <p class="pillar-desc">Domain-led, AI-enabled recruitment delivering interview-ready talent. Junior to leadership roles across BFSI, IT, and Telecom — with a people-first model.</p>
+      <div class="pillar-tags">
+        <span class="ptag">Staff Augmentation</span>
+        <span class="ptag">Leadership Hiring</span>
+        <span class="ptag">AI Assessments</span>
+        <span class="ptag">C2H</span>
+      </div>
+    </div>
+    <div class="pillar reveal d3">
+      <div class="pillar-icon icon-gold">🎓</div>
+      <h3 class="pillar-title">Learning & Development</h3>
+      <p class="pillar-desc">A state-of-the-art training and assessment platform for early-career professionals and enterprises — learn, practice, get certified, and get hired.</p>
+      <div class="pillar-tags">
+        <span class="ptag">BFSI Training</span>
+        <span class="ptag">Corporate LMS</span>
+        <span class="ptag">Certifications</span>
+        <span class="ptag">Practice Interviews</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGY SOLUTIONS -->
+<section class="section bg-alt" id="tech">
+  <div class="section-center reveal">
+    <div class="eyebrow">Technology Solutions</div>
+    <h2 class="section-title">IBM & Microsoft <em>Powered</em></h2>
+    <p class="section-sub">We leverage strategic partnerships with IBM and Microsoft to deliver robust enterprise solutions that accelerate your digital transformation journey.</p>
+  </div>
+  <div class="tech-grid reveal">
+    <div class="tech-card">
+      <div class="tech-card-header">
+        <div class="tech-icon">☁️</div>
+        <h3 class="tech-card-title">Cloud Transformation & Hybrid Cloud</h3>
+      </div>
+      <p class="tech-card-desc">Guide clients through migration from on-premises or legacy systems to secure, scalable, high-performance cloud infrastructures.</p>
+      <ul class="bullet-list">
+        <li>Cloud strategy & architecture design</li>
+        <li>Migration planning & execution</li>
+        <li>Hybrid cloud integration (IBM + Azure)</li>
+        <li>Continuous optimization and cost management</li>
+      </ul>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-header">
+        <div class="tech-icon">⚙️</div>
+        <h3 class="tech-card-title">Digital Transformation & Legacy Modernization</h3>
+      </div>
+      <p class="tech-card-desc">Modernize outdated systems combining IBM mainframe expertise with Microsoft's agile cloud capabilities.</p>
+      <ul class="bullet-list">
+        <li>Legacy system assessment & modernization roadmaps</li>
+        <li>Microservices, containerization & DevOps</li>
+        <li>Data Visualization / Business Intelligence (AI/ML)</li>
+        <li>Data center & Co-Location (COLO) support</li>
+      </ul>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-header">
+        <div class="tech-icon">🧠</div>
+        <h3 class="tech-card-title">AI, Advanced Analytics & Cognitive Solutions</h3>
+      </div>
+      <p class="tech-card-desc">Convert data into actionable insights with AI and analytics — driving innovation and sharper decision-making.</p>
+      <ul class="bullet-list">
+        <li>AI strategy development & implementation</li>
+        <li>Machine learning model deployment</li>
+        <li>GenAI, Conversational AI & Agentic AI</li>
+        <li>IBM Watson & Microsoft Cognitive Services</li>
+      </ul>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-header">
+        <div class="tech-icon">🛡️</div>
+        <h3 class="tech-card-title">Cybersecurity & Compliance</h3>
+      </div>
+      <p class="tech-card-desc">Protect digital assets through advanced security solutions ensuring resiliency, regulatory compliance, and risk mitigation.</p>
+      <ul class="bullet-list">
+        <li>Security audits and risk assessments</li>
+        <li>Cloud security implementations</li>
+        <li>Identity and access management</li>
+        <li>Compliance advisory for industry regulations</li>
+      </ul>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-header">
+        <div class="tech-icon">🏢</div>
+        <h3 class="tech-card-title">Enterprise Software & ERP Solutions</h3>
+      </div>
+      <p class="tech-card-desc">Seamlessly implement ERP, CRM, and HRMS using SAP on Microsoft Cloud and IBM's specialized software solutions.</p>
+      <ul class="bullet-list">
+        <li>End-to-end ERP implementation & integration</li>
+        <li>Custom software development</li>
+        <li>Business process reengineering</li>
+        <li>Ongoing support and system upgrades</li>
+      </ul>
+    </div>
+    <div class="tech-card">
+      <div class="tech-card-header">
+        <div class="tech-icon">🔗</div>
+        <h3 class="tech-card-title">System Integration & Implementation</h3>
+      </div>
+      <p class="tech-card-desc">Comprehensive consulting from strategy formulation through post-implementation support across IT infrastructure.</p>
+      <ul class="bullet-list">
+        <li>Cloud Infrastructure & Technology Consulting</li>
+        <li>IT Infrastructure enablement & onsite assistance</li>
+        <li>Delivery management & change enablement</li>
+        <li>Lifecycle IT infrastructure & operational support</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TALENT ACQUISITION -->
+<section class="section" id="talent">
+  <div class="section-center reveal">
+    <div class="eyebrow">Outsourcing & Talent Acquisition</div>
+    <h2 class="section-title">Domain-Led, <em>AI-Enabled</em></h2>
+    <p class="section-sub">We don't just source resumes — we deliver interview-ready talent prepared to perform from day one, matched with precision and purpose.</p>
+  </div>
+  <div class="talent-grid reveal">
+    <div class="process-steps">
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <div class="proc-content">
+          <h4>AI-Based Pre-Assessments</h4>
+          <p>Faster, smarter shortlisting through intelligent screening that filters noise from signal across BFSI, IT, and Telecom roles.</p>
+        </div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <div class="proc-content">
+          <h4>Coding Tests & Domain Case Simulations</h4>
+          <p>Validate role-readiness with practical assessments designed by domain experts, ensuring candidates are genuinely prepared.</p>
+        </div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <div class="proc-content">
+          <h4>Behavioural & Aptitude Assessments</h4>
+          <p>Gauge soft-skill alignment and culture fit to ensure long-term success and lower attrition within your organization.</p>
+        </div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">04</div>
+        <div class="proc-content">
+          <h4>Panel Interviews with Domain Experts</h4>
+          <p>Deeper evaluation through structured panel interviews led by seasoned industry professionals who understand your context.</p>
+        </div>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">05</div>
+        <div class="proc-content">
+          <h4>Job Fitment Scorecards</h4>
+          <p>Better hiring confidence with detailed scorecards that benchmark candidates against each role's specific requirements.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-right">
+      <h3>Assessment-First. People-Centric. Results-Driven.</h3>
+      <p>With deep expertise across banking, insurance, finance, education, outsourcing, and IT — our team caters to organizations from small start-ups to multinational companies across Tier 1, 2 & 3 cities in India.</p>
+      <p>We offer ready-to-deploy technology and non-technology resources tailored to your long-term or project-based needs. Our employees aren't just placed — they're supported, celebrated, and empowered.</p>
+      <div class="highlight-box">
+        <p>"With Intellismith, you can rest assured you will get a pipeline of candidates that are a relevant pool of talent, thereby reducing your screening time and improving your offer-to-joining ratio."</p>
+      </div>
+      <div class="chip-group">
+        <span class="chip a">BFSI Hiring</span>
+        <span class="chip a">IT Staffing</span>
+        <span class="chip a">Telecom Talent</span>
+        <span class="chip">C2H Contracts</span>
+        <span class="chip">Leadership Search</span>
+        <span class="chip">Staff Augmentation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Job Widget Section -->
+<section class="section bg-alt" id="ld">
+  <div class="section-center reveal">
+    <div class="eyebrow">Our Jobs</div>
+    <h2 class="section-title">
+      Find your <em>Perfect role</em>
+      and build a rewarding <em>Career with us.</em>
+    </h2>
+  </div>
+
+  <script type="text/javascript" 
+src="https://jobsapi.ceipal.com/APISource/widget.js" 
+data-ceipal-api-key="QlJyVFkzY2h3aVlvQ2tQdlA2NDNmUT09" 
+data-ceipal-career-portal-id="Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09">
+</script>
+<div id="example-widget-container" style="display: none;">
+
+</div>
+
+
+<!-- LEARNING & DEVELOPMENT -->
+<section class="section bg-alt" id="ld">
+  <div class="section-center reveal">
+    <div class="eyebrow">Learning & Development Solutions</div>
+    <h2 class="section-title">Learn. Practice. <em>Get Hired.</em></h2>
+    <p class="section-sub">A state-of-the-art training & assessment platform for individuals breaking into BFSI — and enterprises building future-ready teams.</p>
+  </div>
+  <div class="ld-grid reveal">
+    <div class="ld-card ld-main">
+      <div class="ld-tag">Early-Career Accelerator</div>
+      <h3 class="ld-title">CFS — Career Fast-Start Program</h3>
+      <p class="ld-desc">Designed for individuals with 0–3 years of experience keen on breaking into the BFSI arena. Enroll, learn, practice, and get hired.</p>
+      <div class="ld-features">
+        <div class="ld-feat"><span class="ld-feat-icon">📚</span><div>BFSI Industry Deep-Dive — products, services & sector trends</div></div>
+        <div class="ld-feat"><span class="ld-feat-icon">🎥</span><div>Role-specific interview prep with recorded sample videos from experts</div></div>
+        <div class="ld-feat"><span class="ld-feat-icon">💬</span><div>Interactive feedback from seasoned professionals on your responses</div></div>
+        <div class="ld-feat"><span class="ld-feat-icon">🎤</span><div>Simulated practice interviews to build confidence and readiness</div></div>
+        <div class="ld-feat"><span class="ld-feat-icon">🏆</span><div>Earn certifications and apply for curated BFSI job listings</div></div>
+      </div>
+      <a href="#contact" class="btn-primary" style="display:inline-block;">Join the Program</a>
+    </div>
+    <div class="ld-card ld-sm">
+      <div class="ld-tag">Enterprise</div>
+      <h3 class="ld-title">Corporate Training & LMS</h3>
+      <p class="ld-desc">Custom learning tracks, real-time dashboards, and compliance automation for your entire workforce — from onboarding to leadership development.</p>
+      <ul class="bullet-list">
+        <li>Employee Onboarding</li>
+        <li>Upskilling & Reskilling Programs</li>
+        <li>Leadership Development</li>
+        <li>Compliance & Certification automation</li>
+        <li>Real-time progress & engagement tracking</li>
+      </ul>
+      <div style="margin-top:20px;">
+        <a href="#contact" class="btn-outline" style="display:inline-block;font-size:13px;padding:11px 22px;">Book a Demo</a>
+      </div>
+    </div>
+    <div class="ld-card ld-sm">
+      <div class="ld-tag">For Companies</div>
+      <h3 class="ld-title">Train Smarter. Track Better.</h3>
+      <p class="ld-desc">Share your training goals — we design tailored video modules, quizzes, and training flows, then monitor completion rates, engagement, and performance insights.</p>
+      <ul class="bullet-list">
+        <li>Understand your team's learning needs</li>
+        <li>Launch custom tailored learning tracks</li>
+        <li>Monitor progress in real-time dashboards</li>
+        <li>Identify knowledge gaps and assign refreshers</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / STORY -->
+<section class="section" id="about">
+  <div class="story-grid reveal">
+    <div class="story-left">
+      <div class="eyebrow">Our Story</div>
+      <h2>Built on <em style="font-family:'Playfair Display',serif;font-style:italic;color:var(--sky);">Decades</em> of Expertise</h2>
+      <p>Intellismith was established in August 2019 by a team of professionals with over 50 years of collective corporate experience. From pioneering technology resource outsourcing to becoming a trusted enterprise solutions and learning partner — we've grown with innovation at our core.</p>
+      <p>We support digital transformation journeys through cloud enablement, AI, automation, and secure scalable IT services. Our mission: delivering industry-focused talent solutions, transformative learning, and enterprise-ready technology — with purpose and precision.</p>
+      <p>The leadership team has worked across banking, insurance, finance, education, outsourcing, and IT — committed to transparency and accountability in every interaction.</p>
+      <div class="chip-group">
+        <span class="chip a">BFSI</span>
+        <span class="chip a">Information Technology</span>
+        <span class="chip a">Telecom</span>
+        <span class="chip">Education</span>
+        <span class="chip">Outsourcing</span>
+        <span class="chip">Banking & Finance</span>
+      </div>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-box accent">
+        <span class="metric-val">2019</span>
+        <div class="metric-label">Founded in August</div>
+      </div>
+      <div class="metric-box">
+        <span class="metric-val">50+</span>
+        <div class="metric-label">Years Collective Leadership Experience</div>
+      </div>
+      <div class="metric-box">
+        <span class="metric-val">IBM</span>
+        <div class="metric-label">& Microsoft Strategic Partner</div>
+      </div>
+      <div class="metric-box accent">
+        <span class="metric-val">3</span>
+        <div class="metric-label">Core Service Pillars</div>
+      </div>
+      <div class="metric-box span2">
+        <span class="metric-val" style="font-size:20px;">Noida · Delhi</span>
+        <div class="metric-label">Office No. B 210, Tower B, Noida One, Sector 62, U.P. – 201309</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- APPLY JOBS SECTION -->
+  <section id="apply-jobs">
+    <h2>Apply Jobs</h2>
+
+    <div id="job-placeholder">
+      Click "Apply Jobs" to view openings
+    </div>
+
+    <div id="job-widget" style="display: none;"></div>
+  </section>
+
+<!-- LEADRSHIP -->
+
+      <div class="section-center reveal">
+
+    <div class="eyebrow">Leadership Team</div>
+    <h2 class="section-title">Guided by <em>Experience</em></h2>
+    <p class="section-sub">Our founders bring deep expertise across BFSI, technology, and operations — providing strategic direction grounded in real-world insight.</p>
+  </div>
+  <div class="leaders-grid">
+    <div class="leader-card reveal d1">
+      <div class="leader-avatar">
+        <img src="./Arvind Nair.png" alt="Arvind Nair">
+      </div>
+      <div class="leader-name">Mr. Arvind Nair</div>
+      <div class="leader-role">MD & CEO</div>
+      <p class="leader-bio">24 years in BFSI and Technology. Retail & Corporate Transaction Banking with India's top three private banks. Start-up team member of IDFC Bank. Managed India, Asia, and Africa geographies.</p>
+    </div>
+    <div class="leader-card reveal d2">
+      <div class="leader-avatar">
+        <img src="./Ajay Kumar.jpg" alt="Ajay Kumar">
+      </div>
+      <div class="leader-name">Mr. Ajay Kumar</div>
+      <div class="leader-role">Director</div>
+      <p class="leader-bio">Two decades of experience in project and facility management across domestic and international markets. Leadership roles with Indian and Multinational companies at national and international levels.</p>
+    </div>
+    <div class="leader-card reveal d3">
+      <div class="leader-avatar">
+        <img src="./Anushka Khurana.png" alt="Anushka Khurana">
+      </div>
+      <div class="leader-name">Ms. Anushka Khurana</div>
+      <div class="leader-role">Director</div>
+      <p class="leader-bio">Over a decade of experience in operations and hiring for IBM. Extensive exposure running operations for large teams with deep understanding of enterprise talent requirements and candidate experience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+
+<section class="section cta-wrap" id="contact">
+  <div class="cta-box">
+
+    <div class="cta-header">
+      <h2>
+        Ready to Transform Your 
+        <em>Business?</em>
+      </h2>
+      <p>
+        Let's discuss your technology, talent, or learning needs. 
+        Our team is here to help.
+      </p>
+    </div>
+
+    <div class="cta-content">
+
+      <!-- LEFT -->
+      <div class="cta-left">
+        <div class="cta-buttons">
+          <a href="mailto:info@intellismith.com" class="btn-primary">
+            info@intellismith.com
+          </a>
+          <a href="tel:+919311446085" class="btn-outline">
+            +91 93114 46085
+          </a>
+        </div>
+
+        <div class="cta-address">
+          <div class="addr-item">
+            <h4>OFFICE</h4>
+            <p>
+              Office No. B 210, Tower B, Plot No. B-8, Noida One, Sector 62, 
+              Noida, Distt. Gautam Buddh Nagar, U.P – 201309
+            </p>
+          </div>
+
+          <div class="addr-item">
+            <h4>REGISTERED ADDRESS</h4>
+            <p>
+              F-193/F-1, Dilshad Colony, Delhi – 110095
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="cta-right">
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+          <input type="hidden" name="form-name" value="contact">
+          <input type="hidden" name="bot-field">
+
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section><!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <img src="./image.png" alt="Intellismith" style="height:44px;width:auto;display:block;">
+      </a>
+      <p>Intellismith Services Private Limited (formerly Intellismith Consultancy Private Limited). Technology, Talent & Learning — with purpose and precision.</p>
+      <div class="partner-badges">
+        <span class="badge-partner">IBM Partner</span>
+        <span class="badge-partner">Microsoft Partner</span>
+      </div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#tech">Technology Solutions</a>
+        <a href="#talent">Outsourcing & Talent</a>
+        <a href="#ld">Learning & Development</a>
+        <a href="#">Apply for Jobs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#about">Leadership Team</a>
+        <a href="#">Blogs</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:info@intellismith.com">info@intellismith.com</a></p>
+        <p><a href="tel:+919311446972">+91-9311446972</a></p>
+        <p>Noida One, Sector 62,<br>Noida, U.P – 201309</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>©️ 2026 Intellismith Services Private Limited. All rights reserved.</span>
+    <span>Delivering intelligence with purpose.</span>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  reveals.forEach(r => io.observe(r));
+</script>
+<div class="floating-btns">
+  <!-- WhatsApp -->
+  <a href="https://wa.me/919311446972" 
+     target="_blank" 
+     class="f-btn whatsapp" 
+     title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/company/intellismith/" 
+     target="_blank" 
+     class="f-btn linkedin" 
+     title="Connect on LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+</div>
+
+<script>
+  let jobLoaded = false;
+
+  function handleApplyClick() {
+    // Scroll to job section
+    document.getElementById("ld").scrollIntoView({
+      behavior: "smooth"
+    });
+
+    // Load Ceipal widget only once
+    if (!jobLoaded) {
+      loadCeipalWidget();
+      jobLoaded = true;
+    }
+  }
+
+  function loadCeipalWidget() {
+    // Hide placeholder text
+    document.getElementById("job-placeholder").style.display = "none";
+
+    // Show widget container
+    const container = document.getElementById("example-widget-container");
+    container.style.display = "block";
+
+    // Create Ceipal script dynamically
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+
+    script.src = "https://jobsapi.ceipal.com/APISource/widget.js";
+
+    script.setAttribute("QlJyVFkzY2h3aVlvQ2tQdlA2NDNmUT09");
+    script.setAttribute("Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09");
+
+    container.appendChild(script);
+  }
+</script>
+
+</body>
+</html>
